@@ -1,6 +1,6 @@
 {
     "name": "ace-editor-vue-ja",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "./dist/main.bundle.js",
     "types": "./types/main.d.ts",
     "license": "MIT",
@@ -8,6 +8,11 @@
         "type": "git",
         "url": "git+ssh://git@github.com:derushio/ace-editor-vue-ja.git"
     },
+    "files": [
+        "src/",
+        "dist/",
+        "types/"
+    ],
     "scripts": {
         "clean": "./scripts.sh clean",
         "build": "./scripts.sh build",
