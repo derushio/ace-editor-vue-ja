@@ -13,7 +13,7 @@ function build() {
 
 function publish() {
     build()
-    npm publish
+    yarn publish
 }
 
 function start() {
