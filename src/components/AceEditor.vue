@@ -43,7 +43,7 @@ plugins: [
 
 <script lang='ts'>
 import { Component, Prop, PropSync, Watch } from 'vue-property-decorator';
-import Vue from '@/myvue';
+import Vue from 'vue';
 import * as Ace from 'ace-builds';
 
 export interface AceConfig {

@@ -44,7 +44,9 @@ module.exports = {
     entry: {
         main: path.resolve(srcPath, 'main.ts'),
     },
-    externals: [],
+    externals: {
+        vue: 'Vue',
+    },
 
     output: {
         path: distPath,
