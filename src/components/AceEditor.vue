@@ -39,11 +39,11 @@ plugins: [
 
 <template lang='pug'>
 .ace-editor
-    p test
 </template>
 
 <script lang='ts'>
-import { Component, Vue, Prop, PropSync, Watch } from 'vue-property-decorator';
+import { Component, Prop, PropSync, Watch } from 'vue-property-decorator';
+import Vue from '@/myvue';
 import * as Ace from 'ace-builds';
 
 export interface AceConfig {
@@ -80,11 +80,11 @@ export default class AceEditor extends Vue {
         (window as any).require = (Ace as any).require;
     }
 
-    protected mounted(): void {
+    protected mounted() {
         this.setup();
     }
 
-    protected setup(): void {
+    protected setup() {
         this.editor = Ace.edit(this.$el);
         this.documentToEditor();
 
@@ -103,7 +103,7 @@ export default class AceEditor extends Vue {
     }
 
     @Watch('syncDocument')
-    protected documentToEditor(): void {
+    protected documentToEditor() {
         if (this.editor == null) {
             return;
         }
@@ -114,7 +114,7 @@ export default class AceEditor extends Vue {
         }
     }
 
-    protected editorToDocument(): void {
+    protected editorToDocument() {
         if (this.editor == null) {
             return;
         }
@@ -126,6 +126,6 @@ export default class AceEditor extends Vue {
 
 <style lang='stylus' scoped>
 .ace-editor
-    p
-        color: red;
+    &.ace_editor *
+        font-family: 'VL Gothic for AceEditor', Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace !important;
 </style>

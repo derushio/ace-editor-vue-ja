@@ -1,5 +1,5 @@
 import Vue, { PluginObject } from 'vue';
-import AceEditor from './AceEditor.vue';
+import AceEditor from '@/components/AceEditor.vue';
 
 export const components = [ AceEditor ];
 
