@@ -16,7 +16,6 @@ function dev() {
     build && start
 }
 
-
 function build_typedoc() {
     typedoc --name "$1" --mode 'file' --out './document/typedoc' './src'
 }
