@@ -12,8 +12,11 @@ function build() {
 }
 
 function publish() {
-    build()
+    build
     yarn publish
+    git add -A
+    git commit -m 'release'
+    git push
 }
 
 function start() {
