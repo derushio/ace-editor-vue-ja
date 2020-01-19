@@ -94,8 +94,8 @@ module.exports = {
 
     plugins: [
         new webpack.DefinePlugin({}),
+        new VueLoaderPlugin(),
     ],
-    new VueLoaderPlugin()
 
     devtool: isProduct? false: '#source-map',
 };

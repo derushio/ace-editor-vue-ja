@@ -1,5 +1,5 @@
 {
-    "name": "node-ts-template",
+    "name": "ace-editor-vue-ja",
     "version": "1.0.0",
     "main": "./dist/main.bundle.js",
     "license": "MIT",
@@ -41,6 +41,7 @@
         "tslint": "^5.20.1",
         "tslint-loader": "^3.6.0",
         "typedoc": "^0.15.8",
+        "vue-loader": "^15.8.3",
         "vue-template-compiler": "^2.6.10",
         "webpack": "^4.41.5",
         "webpack-cli": "^3.3.10",
