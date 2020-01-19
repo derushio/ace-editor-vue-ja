@@ -4,9 +4,14 @@
     "main": "./dist/main.bundle.js",
     "types": "./types/main.d.ts",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:derushio/ace-editor-vue-ja.git"
+    },
     "scripts": {
         "clean": "./scripts.sh clean",
         "build": "./scripts.sh build",
+        "publish": "./scripts.sh publish",
         "start": "./scripts.sh start",
         "dev": "./scripts.sh dev",
         "build_typedoc": "./scripts.sh build_typedoc project",

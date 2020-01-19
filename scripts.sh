@@ -11,6 +11,11 @@ function build() {
     mv 'node_modules/_vue' 'node_modules/vue'
 }
 
+function publish() {
+    build()
+    npm publish
+}
+
 function start() {
     node dist/main.bundle.js
 }
