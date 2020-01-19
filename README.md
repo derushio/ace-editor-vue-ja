@@ -35,6 +35,28 @@ plugins: [
     src: url('~ace-editor-vue-ja/src/assets/fonts/VL-Gothic-Regular-for-AceEditor.ttf')
 ```
 
+## HOW TO USE
+```ts
+import Vue from 'vue';
+import AceEditorVueJa from 'ace-editor-vue-ja';
+Vue.use(AceEditorVueJa);
+```
+
+```html
+<ace-editor :document.sync='document' :config='config'>
+```
+
+* config
+```ts
+import { defaultConfig } from 'ace-editor-vue-ja/src/models/AceConfig';
+function config() {
+    const config = defaultConfig();
+    config.theme = 'ace/theme/monokai';
+    config.mode = 'ace/mode/jade';
+    return config;
+}
+```
+
 ## LICENSE
 
 ```
