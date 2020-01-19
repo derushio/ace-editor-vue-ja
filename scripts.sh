@@ -14,9 +14,7 @@ function build() {
 function publish() {
     build
     yarn publish
-    git add -A
-    git commit -m 'release'
-    git push
+    git add -A && git commit -m 'release' && git push
 }
 
 function start() {
