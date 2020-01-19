@@ -49,7 +49,7 @@ import { AceConfig, defaultConfig } from '@/models/AceConfig';
 
 @Component
 export default class AceEditor extends Vue {
-    @Prop({ type: Object, default: () => defaultConfig })
+    @Prop({ type: Object, default: () => defaultConfig() })
     protected config?: AceConfig;
 
     @PropSync('document', { type: String, default: () => '', required: true })

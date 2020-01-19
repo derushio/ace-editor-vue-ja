@@ -7,11 +7,13 @@ export interface AceConfig {
     lineHeight: string;
 }
 
-export const defaultConfig = {
-    basePath: '/',
-    theme: '',
-    mode: '',
+export function defaultConfig() {
+    return {
+        basePath: '/',
+        theme: '',
+        mode: '',
 
-    fontSize: '14px',
-    lineHeight: '1.5em',
-} as AceConfig;
+        fontSize: '14px',
+        lineHeight: '1.5em',
+    } as AceConfig;
+}
