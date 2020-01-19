@@ -1,0 +1,11 @@
+/node_modules
+/dist
+/document
+/types
+
+yarn-error.log
+yarn.lock
+
+.env.local
+
+.vscode
