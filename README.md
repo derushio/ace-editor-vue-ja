@@ -3,6 +3,7 @@
 ## Description
 * ace
 * リッチテキストエディタコンポーネント
+* 日本語上でのバグを除去
 
 ## Dependencies
 * ace-builds
