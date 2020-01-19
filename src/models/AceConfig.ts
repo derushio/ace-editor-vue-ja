@@ -9,7 +9,7 @@ export interface AceConfig {
 
 export function defaultConfig() {
     return {
-        basePath: '/',
+        basePath: './ace',
         theme: '',
         mode: '',
 
