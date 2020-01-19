@@ -14,12 +14,26 @@
 ## Instalation
 * webpackに以下の記述を追加
 
+```js
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const modulePath = path.resolve(__dirname, 'node_modules');
+const distPath = path.resolve(__dirname, 'dist');
 ```
+
+```js
 plugins: [
-    new copyWebpackPlugin([
-        { from: path.resolve(modulePath, 'ace-builds/src'), to: path.resolve(distPath, 'ace') }
-    ])
+    new CopyWebpackPlugin([
+        { from: path.resolve(modulePath, 'ace-builds/src'), to: path.resolve(distPath, 'ace') },
+    ]),
 ]
+```
+
+* stylusに以下を追加
+```stylus
+@font-face
+    font-family: 'VL Gothic for AceEditor'
+    src: url('~ace-editor-vue-ja/src/assets/fonts/VL-Gothic-Regular-for-AceEditor.ttf')
 ```
 </document>
 
