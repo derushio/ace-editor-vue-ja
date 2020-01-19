@@ -45,7 +45,12 @@ module.exports = {
         main: path.resolve(srcPath, 'main.ts'),
     },
     externals: {
-        vue: 'Vue',
+        'vue': {
+            root: 'Vue',
+            commonjs2: 'vue',
+            commonjs: 'vue',
+            amd: 'vue'
+        },
     },
 
     output: {

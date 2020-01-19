@@ -5,7 +5,10 @@ function clean() {
 }
 
 function build() {
-    clean && $(npm bin)/webpack
+    yarn install
+    mv 'node_modules/vue' 'node_modules/_vue'
+    clean && $(npm bin)/webpack || true
+    mv 'node_modules/_vue' 'node_modules/vue'
 }
 
 function start() {
