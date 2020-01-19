@@ -50,10 +50,10 @@ import { AceConfig, defaultConfig } from '@/models/AceConfig';
 @Component
 export default class AceEditor extends Vue {
     @Prop({ type: Object, default: () => defaultConfig() })
-    protected config?: AceConfig;
+    protected config!: AceConfig;
 
     @PropSync('document', { type: String, default: () => '', required: true })
-    protected syncDocument?: string;
+    protected syncDocument!: string;
 
     protected editor = null as Ace.Ace.Editor | null;
 
@@ -75,13 +75,13 @@ export default class AceEditor extends Vue {
             this.editorToDocument();
         });
 
-        Ace.config.set('basePath', this.config!.basePath);
-        this.editor.setTheme(this.config!.theme);
-        this.editor.session.setMode(this.config!.mode);
+        Ace.config.set('basePath', this.config.basePath);
+        this.editor.setTheme(this.config.theme);
+        this.editor.session.setMode(this.config.mode);
 
-        this.editor.setFontSize(this.config!.fontSize);
+        this.editor.setFontSize(this.config.fontSize);
 
-        this.editor.container.style.lineHeight = this.config!.lineHeight;
+        this.editor.container.style.lineHeight = this.config.lineHeight;
         this.editor.renderer.updateFontSize();
     }
 
@@ -92,8 +92,8 @@ export default class AceEditor extends Vue {
         }
 
         // 外部から変更が合った場合
-        if (this.syncDocument! !== this.editor.getValue()) {
-            this.editor.setValue(this.syncDocument!, 1);
+        if (this.syncDocument !== this.editor.getValue()) {
+            this.editor.setValue(this.syncDocument, 1);
         }
     }
 
