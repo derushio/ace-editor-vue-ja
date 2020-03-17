@@ -1,7 +1,7 @@
 import Vue, { PluginObject } from 'vue';
-import Test from '@/components/Test.vue';
+import AceEditor from '@/components/AceEditor.vue';
 
-export const components = [Test];
+export const components = [AceEditor];
 
 export const installers = components.map(component => {
     return {
