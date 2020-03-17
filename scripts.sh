@@ -4,7 +4,6 @@ function clean() {
     $(npm bin)/rimraf './dist/*'
 }
 
-
 function lint() {
     eslint ./src/**/*.ts
 }

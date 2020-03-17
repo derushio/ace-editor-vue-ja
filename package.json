@@ -21,7 +21,7 @@
         "start": "./scripts.sh start",
         "dev": "./scripts.sh dev",
         "build_typedoc": "./scripts.sh build_typedoc project",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "dependencies": {
         "ace-builds": "^1.4.8",

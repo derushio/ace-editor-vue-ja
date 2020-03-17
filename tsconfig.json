@@ -15,18 +15,11 @@
         "declaration": true,
         "declarationDir": "types",
         "baseUrl": ".",
-        "types": [],
+        "types": ["jest"],
         "paths": {
-            "@/*": [
-                "src/*"
-            ]
+            "@/*": ["src/*"]
         },
-        "lib": [
-            "esnext",
-            "dom",
-            "dom.iterable",
-            "scripthost"
-        ]
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
     },
     "include": [
         "src/**/*.ts",
@@ -35,8 +28,5 @@
         "tests/**/*.ts",
         "tests/**/*.tsx"
     ],
-    "exclude": [
-        "node_modules/**",
-        "dist/**"
-    ]
+    "exclude": ["node_modules/**", "dist/**"]
 }
