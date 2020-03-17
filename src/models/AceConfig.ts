@@ -7,7 +7,7 @@ export interface AceConfig {
     lineHeight: string;
 }
 
-export function defaultConfig() {
+export function defaultConfig(): AceConfig {
     return {
         basePath: './ace',
         theme: '',

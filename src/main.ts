@@ -1,5 +1,5 @@
 import Vue, { PluginObject } from 'vue';
-import { installers } from './components';
+import { installers } from '@/components';
 
 export default {
     install: (MyVue: typeof Vue) => {

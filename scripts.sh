@@ -4,11 +4,17 @@ function clean() {
     $(npm bin)/rimraf './dist/*'
 }
 
+
+function lint() {
+    eslint ./src/**/*.ts
+}
+
 function build() {
-    yarn install
-    mv 'node_modules/vue' 'node_modules/_vue'
-    clean && $(npm bin)/webpack || true
-    mv 'node_modules/_vue' 'node_modules/vue'
+    yarn lint && \
+        yarn install && \
+        mv 'node_modules/vue' 'node_modules/_vue' && \
+        clean && $(npm bin)/webpack || true && \
+        mv 'node_modules/_vue' 'node_modules/vue'
 }
 
 function publish() {

@@ -4,16 +4,17 @@ const dotenv = require('dotenv');
  * 環境設定
  * .envが共通ファイル、.env.localが個人用ファイル
  */
-const env = Object.assign({},
+const env = Object.assign(
+    {},
     dotenv.config({ path: '.env' }).parsed || {},
-    dotenv.config({ path: '.env.local' }).parsed || {});
+    dotenv.config({ path: '.env.local' }).parsed || {},
+);
 
 /**
  * ビルド環境
  */
-env.NODE_ENV = (env.NODE_ENV === 'production')
-    ? env.NODE_ENV
-    : process.env.NODE_ENV;
+env.NODE_ENV =
+    env.NODE_ENV === 'production' ? env.NODE_ENV : process.env.NODE_ENV;
 console.log('NODE_ENV:', env.NODE_ENV);
 
 const path = require('path');
@@ -45,11 +46,11 @@ module.exports = {
         main: path.resolve(srcPath, 'main.ts'),
     },
     externals: {
-        'vue': {
+        vue: {
             root: 'Vue',
             commonjs2: 'vue',
             commonjs: 'vue',
-            amd: 'vue'
+            amd: 'vue',
         },
     },
 
@@ -61,10 +62,10 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [ '.js', '.ts', '.json', '.vue' ],
+        extensions: ['.js', '.ts', '.json', '.vue'],
         alias: {
             '@': path.resolve(srcPath),
-            'vue$': 'vue/dist/vue.esm.js',
+            vue$: 'vue/dist/vue.esm.js',
         },
     },
 
@@ -75,9 +76,8 @@ module.exports = {
                 use: [
                     {
                         loader: 'ts-loader',
-                        options: { appendTsSuffixTo: [ /\.vue$/ ] }
+                        options: { appendTsSuffixTo: [/\.vue$/] },
                     },
-                    'tslint-loader'
                 ],
             },
             {
@@ -99,10 +99,7 @@ module.exports = {
         ],
     },
 
-    plugins: [
-        new webpack.DefinePlugin({}),
-        new VueLoaderPlugin(),
-    ],
+    plugins: [new webpack.DefinePlugin({}), new VueLoaderPlugin()],
 
-    devtool: isProduct? false: '#source-map',
+    devtool: isProduct ? false : '#source-map',
 };
